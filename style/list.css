@@ -5,6 +5,10 @@
 	font-size: 0.7em;
 }
 
+a{
+	color: #FF0000;
+}
+
 #lineas {
 	font-size: 14px;
 	/*overflow-y: scroll;*/

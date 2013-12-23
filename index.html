@@ -54,15 +54,14 @@
 				</div>
 			</div>
 
-			<div id="mapa" class="pagebody" aria-owns="tb1">
+			<div id="mapa" class="pagebody" aria-owns="tb1" style="text-align: center;">
 				<style>
 					#mapdiv {
-						width: 100%;
-						height: 100%;
+						width: 50%;
+						height: 50%;
 					}
 				</style>
-				<div id="mapdiv" style="margin:0.5rem 1rem 0.5rem 1rem">
-
+				<div id="mapdiv" style="margin:0.5rem 1rem 0.5rem 1rem;">
 				</div>
 			</div>
 
@@ -1921,11 +1920,7 @@
 			</div>
 
 			<div id="terminos" class="pagebody" aria-owns="tb5">
-				<div style="margin:0.5rem 1rem 0.5rem 1rem">
-					<h2>Términos de Uso</h2>
-					<p>
-						This is the third page body (page 2.)
-					</p>
+				<div id="terminosDeUso" style="margin:0.5rem 1rem 0.5rem 1rem">
 				</div>
 			</div>
 
@@ -1936,7 +1931,7 @@
 					<li aria-controls="plano" class="icon metro"></li>
 					<li aria-controls="horario" class="icon agenda"></li>
 					<li aria-controls="saldoBip" class="icon bip"></li>
-					<li aria-controls="terminos" class="icon user"></li>
+					<li aria-controls="terminos" class="icon user" onclick="loadTerminos();"></li>
 				</menu>
 				<menu id="tb1" type="toolbar" aria-expanded="true">
 					<li aria-controls="home" class="icon inicio"></li>
@@ -1944,7 +1939,7 @@
 					<li aria-controls="plano" class="icon metro"></li>
 					<li aria-controls="horario" class="icon agenda"></li>
 					<li aria-controls="saldoBip" class="icon bip"></li>
-					<li aria-controls="terminos" class="icon user"></li>
+					<li aria-controls="terminos" class="icon user" onclick="loadTerminos();"></li>
 				</menu>
 				<menu id="tb2" type="toolbar" aria-expanded="true">
 					<li aria-controls="home" class="icon inicio"></li>
@@ -1952,7 +1947,7 @@
 					<li aria-controls="plano" class="icon metro"></li>
 					<li aria-controls="horario" class="icon agenda"></li>
 					<li aria-controls="saldoBip" class="icon bip"></li>
-					<li aria-controls="terminos" class="icon user"></li>
+					<li aria-controls="terminos" class="icon user" onclick="loadTerminos();"></li>
 				</menu>
 				<menu id="tb3" type="toolbar" aria-expanded="true">
 					<li aria-controls="home" class="icon inicio" onclick="cambiarcont()"></li>
@@ -1960,23 +1955,23 @@
 					<li aria-controls="plano" class="icon metro" onclick="cambiarcont()"></li>
 					<li aria-controls="horario" class="icon agenda" onclick="cambiarcont()"></li>
 					<li aria-controls="saldoBip" class="icon bip" onclick="cambiarcont()"></li>
-					<li aria-controls="terminos" class="icon user" onclick="cambiarcont()"></li>
+					<li aria-controls="terminos" class="icon user" onclick="cambiarcont(); loadTerminos()"></li>
 				</menu>
 				<menu id="tb4" type="toolbar" aria-expanded="true">
-					<li aria-controls="home" class="icon inicio"></li>
-					<li aria-controls="mapa" class="icon place" onclick="getGeolocation();"></li>
-					<li aria-controls="plano" class="icon metro"></li>
-					<li aria-controls="horario" class="icon agenda"></li>
-					<li aria-controls="saldoBip" class="icon bip"></li>
-					<li aria-controls="terminos" class="icon user"></li>
+					<li aria-controls="home" class="icon inicio" onclick="inicio();"></li>
+					<li aria-controls="mapa" class="icon place" onclick="getGeolocation(); inicio();"></li>
+					<li aria-controls="plano" class="icon metro" onclick="inicio();"></li>
+					<li aria-controls="horario" class="icon agenda" onclick="inicio();"></li>
+					<li aria-controls="saldoBip" class="icon bip" onclick="inicio();"></li>
+					<li aria-controls="terminos" class="icon user" onclick="loadTerminos(); inicio();"></li>
 				</menu>
 				<menu id="tb5" type="toolbar" aria-expanded="true">
-					<li aria-controls="home" class="icon inicio"></li>
-					<li aria-controls="mapa" class="icon place" onclick="getGeolocation();"></li>
-					<li aria-controls="plano" class="icon metro"></li>
-					<li aria-controls="horario" class="icon agenda"></li>
-					<li aria-controls="saldoBip" class="icon bip"></li>
-					<li aria-controls="terminos" class="icon user"></li>
+					<li aria-controls="home" class="icon inicio" onclick="clearTerminos();"></li>
+					<li aria-controls="mapa" class="icon place" onclick="getGeolocation(); clearTerminos();"></li>
+					<li aria-controls="plano" class="icon metro" onclick="clearTerminos();"></li>
+					<li aria-controls="horario" class="icon agenda" onclick="clearTerminos();"></li>
+					<li aria-controls="saldoBip" class="icon bip" onclick="clearTerminos();"></li>
+					<li aria-controls="terminos" class="icon user" onclick="loadTerminos();"></li>
 				</menu>
 				<script src="js/OpenLayers.js"></script>
 				<script src="js/map.js"></script>

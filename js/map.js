@@ -27,6 +27,7 @@ function loadMapa(lat, lon) {
 	var map = null;
 	var valida = true;
 	document.getElementById('mapdiv').innerHTML = '';
+	document.getElementById('mapdiv').setAttribute("style","width:100%; height: 100%;");
 
 	if (lat == null) {
 		lat = '-33.4436624';

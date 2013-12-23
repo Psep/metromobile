@@ -1,0 +1,21 @@
+CACHE MANIFEST
+# Version 0.6799999
+
+index.html
+css/droid.ttf
+css/font-droid.css
+css/webapp.css
+img/appsday128.png
+img/appsday64.png
+img/appsday60.png
+img/appsday48.png
+img/appsday32.png
+img/appsday16.png
+img/fabio-magnoni-frame.jpg
+img/favicon.ico
+img/firefoxOS-app-days_graphic_RGB.png
+js/jquery-latest.js
+js/webapp.js
+
+NETWORK:
+*
