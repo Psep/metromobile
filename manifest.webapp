@@ -14,5 +14,10 @@
     "url": "http://www.psep.cl"
   },
   "installs_allowed_from": ["*"],
-  "default_locale": "es"
+  "default_locale": "es",
+   "permissions": {
+		"geolocation": {
+			"description" : "Used to locate me"
+		}
+	}
 }
