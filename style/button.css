@@ -1,0 +1,17 @@
+button {
+    text-shadow: 0.1rem 0.1rem 0px rgba(255, 255, 255, 0.3);
+    color: rgb(48, 48, 48);
+    font-weight: normal;
+    background: url("images/default.png") repeat-x scroll left bottom / auto 100% rgb(250, 250, 250);
+    border-radius: 0.2rem;
+    margin-top: 1.5rem;
+    text-align: center;
+    font-size: 1.6rem;
+    height: 3.8rem;
+    width: 100%;
+}
+
+.inputText{
+	width: 100%;
+	font-size: 2em;
+}

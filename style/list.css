@@ -1,0 +1,47 @@
+.tablaBkn{
+	border-collapse:collapse; 
+	text-align: center; 
+	width: 100%; 
+	font-size: 0.7em;
+}
+
+#lineas {
+	font-size: 14px;
+	/*overflow-y: scroll;*/
+}
+
+dl {
+	margin: 20px auto;
+	width: 100%;
+}
+
+dt, dd {
+	padding: 10px;
+}
+
+dt {
+	background: #1B4274;
+	color: white;
+	border-bottom: 1px solid #FFFFFF;
+	border-top: 1px solid #FFFFFF;
+	cursor: pointer;
+}
+
+dd {
+	/*background: #F5F5F5;*/
+	display: none;
+	font-size: 1em;
+}
+
+dt.activo, dt:hover {
+	background: #1154A0;
+}
+
+dt:before {
+	content: "▸";
+	margin-right: 10px;
+}
+
+dt.activo:before {
+	content: "▾";
+}

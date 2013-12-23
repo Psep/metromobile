@@ -1,0 +1,18 @@
+{
+  "name": "MetroMobile",
+  "version": "1.0",
+  "description": "App no oficial del Metro de Santiago para Firefox OS",
+  "launch_path": "/index.html",
+  "icons": {
+    "32": "/images/logo16.png",
+    "48": "/images/logo32.png",
+    "64": "/images/logo64.png",
+    "128": "/images/logo128.png"
+  },
+  "developer": {
+    "name": "Pablo Sepúlveda",
+    "url": "http://www.psep.cl"
+  },
+  "installs_allowed_from": ["*"],
+  "default_locale": "es"
+}

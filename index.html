@@ -1,0 +1,1986 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
+		<link rel="stylesheet" type="text/css" href="style/icons.css"/>
+		<link rel="stylesheet" type="text/css" href="style/principal.css"/>
+		<link rel="stylesheet" type="text/css" href="style/header.css"/>
+		<link rel="stylesheet" type="text/css" href="style/toolbar.css"/>
+		<link rel="stylesheet" type="text/css" href="style/sidebar.css"/>
+		<link rel="stylesheet" type="text/css" href="style/menuaction.css"/>
+		<link rel="stylesheet" type="text/css" href="style/menulist.css"/>
+		<link rel="stylesheet" type="text/css" href="style/pagebody.css"/>
+		<link rel="stylesheet" href="style/map.css" type="text/css" />
+		<link rel="stylesheet" href="style/button.css" type="text/css" />
+		<script type="text/javascript" src="js/temporary.js"></script>
+		<script type="text/javascript" src="js/dispatcher.js"></script>
+		<script type="text/javascript" src="js/install.js"></script>
+		<script type="text/javascript" src="js/toolbar.js"></script>
+		<script type="text/javascript" src="js/sidebar.js"></script>
+		<script type="text/javascript" src="js/menuaction.js"></script>
+		<script type="text/javascript" src="js/menulist.js"></script>
+		<script type="text/javascript" src="js/pagebody.js"></script>
+		<script src="js/jquery-1.10.2.js"></script>
+		<script src="js/jquery-1.10.2.min.js"></script>
+		<script src="js/jquery.blockUI.js"></script>
+		<title>MetroMobile</title>
+	</head>
+	<body>
+		<section class="principal">
+			<header>
+				<img src="metro.png"/>
+			</header>
+
+			<div id="home" class="pagebody" aria-owns="tb0" aria-expanded="true">
+				<div style="margin:0.5rem 1rem 0.5rem 1rem">
+					<div style="text-align: center;">
+						<a class="twitter-timeline"
+						href="https://twitter.com/metrodesantiago"
+						data-widget-id="414850694261141504">@metrodesantiago en Twitter</a>
+						<script>
+							! function(d, s, id) {
+								var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+								if (!d.getElementById(id)) {
+									js = d.createElement(s);
+									js.id = id;
+									js.src = p + "://platform.twitter.com/widgets.js";
+									fjs.parentNode.insertBefore(js, fjs);
+								}
+							}(document, "script", "twitter-wjs");
+						</script>
+					</div>
+				</div>
+			</div>
+
+			<div id="mapa" class="pagebody" aria-owns="tb1">
+				<style>
+					#mapdiv {
+						width: 100%;
+						height: 100%;
+					}
+				</style>
+				<div id="mapdiv" style="margin:0.5rem 1rem 0.5rem 1rem">
+
+				</div>
+			</div>
+
+			<div id="plano" class="pagebody" aria-owns="tb2">
+				<style>
+					#planoMetro {
+						width: 100%;
+						height: 100%;
+					}
+				</style>
+				<div id="planoMetro" style="margin:0.5rem 1rem 0.5rem 1rem">
+
+				</div>
+			</div>
+
+			<div id="horario" class="pagebody" aria-owns="tb3">
+				<link type="text/css" href="style/list.css" rel="stylesheet" />
+				<div style="margin:0.5rem 1rem 0.5rem 1rem;">
+					<h2>Horarios de Estaciones</h2>
+					<p>
+						Fuente en: <a href="http://www.metro.cl/guia-viajero/horarios" target="_blank" style="color: #FF0000">Web Metro de Santiago</a>
+					</p>
+					<p>
+						<div id="lineas">
+							<dl>
+								<!-- Aquí comienza la sección de Línea 1  -->
+								<dt style="background: #CF0027;">
+									Línea 1
+								</dt>
+								<dd>
+									<table border="1" class="tablaBkn">
+										<tr>
+											<td> Estación </td>
+											<td> Periodo </td>
+											<td> Apertura </td>
+											<td> Cierre </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> San Pablo </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:35 </td>
+											<td> 23:35 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:45 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:23 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Neptuno </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:35 </td>
+											<td> 23:35 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:45 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:21 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Pajaritos </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:35 </td>
+											<td> 23:35 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:40 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:19 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Las Rejas </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:35 </td>
+											<td> 23:32 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:40 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:18 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Ecuador </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:35 </td>
+											<td> 23:25 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:40 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:17 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> San Alberto Hurtado </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:35 </td>
+											<td> 23:30 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:35 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:15 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Universidad de Santiago </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:35 </td>
+											<td> 23:28 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:35 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:14 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Estación Central </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:35 </td>
+											<td> 23:27 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:35 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:13 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Unión Latinoamericana </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:40 </td>
+											<td> 23:25 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:30 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:12 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> República </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:40 </td>
+											<td> 23:25 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:30 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:10 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Los Héroes </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:40 </td>
+											<td> 23:22 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:30 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:09 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> La Moneda </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:40 </td>
+											<td> 23:20 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:30 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:08 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Universidad de Chile </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:40 </td>
+											<td> 23:20 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:25 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:06 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Santa Lucía </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:40 </td>
+											<td> 23:20 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:25 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:05 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Universidad Católica </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:40 </td>
+											<td> 23:20 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:25 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:05 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Baquedano </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:45 </td>
+											<td> 23:22 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:25 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:03 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Salvador </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:45 </td>
+											<td> 23:25 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:25 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:05 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Manuel Montt </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:45 </td>
+											<td> 23:25 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:25 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:00 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Pedro de Valdivia </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:45 </td>
+											<td> 23:25 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:25 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:06 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Los Leones </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:50 </td>
+											<td> 23:28 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:25 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:05 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Tobalaba </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:50 </td>
+											<td> 23:30 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:25 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:04 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> El Golf </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:50 </td>
+											<td> 23:30 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:25 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:05 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Alcántara </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:50 </td>
+											<td> 23:30 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:30 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:07 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Escuela Militar </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:50 </td>
+											<td> 23:35 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:30 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:08 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Manquehue </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:50 </td>
+											<td> 23:35 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:35 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:10 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Hernando de Magallanes </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:50 </td>
+											<td> 23:35 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:35 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:12 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Los Dominicos </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:50 </td>
+											<td> 23:40 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:35 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:14 </td>
+										</tr>
+									</table>
+								</dd>
+
+								<!-- Aquí comienza la sección de Línea 2  -->
+								<dt style="background: #E36D0A;">
+									Línea 2
+								</dt>
+								<dd>
+									<table border="1" style="border-collapse:collapse; text-align: center; width: 100%; font-size: 0.7em;">
+										<tr>
+											<td> Estación </td>
+											<td> Periodo </td>
+											<td> Apertura </td>
+											<td> Cierre </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> La Cisterna </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:40 </td>
+											<td> 23:33 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:33 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:19 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> El Parrón </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:40 </td>
+											<td> 23:31 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:31 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:17 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Lo Ovalle </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:40 </td>
+											<td> 23:29 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:29 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:15 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Ciudad del Niño </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:40 </td>
+											<td> 23:28 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:28 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:14 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Departamental </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:45 </td>
+											<td> 23:26 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:26 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:12 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Lo Vial </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:45 </td>
+											<td> 23:25 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:25 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:11 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> San Miguel </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:45 </td>
+											<td> 23:24 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:24 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:10 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> El Llano </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:45 </td>
+											<td> 23:23 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:22 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:08 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Franklin </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:50 </td>
+											<td> 23:21 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:21 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:07 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Rondizzoni </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:50 </td>
+											<td> 23:20 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:19 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:05 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Parque O'Higgins </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:50 </td>
+											<td> 23:18 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:18 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:04 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Toesca </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:55 </td>
+											<td> 23:17 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:16 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:04 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Los Héroes </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:55 </td>
+											<td> 23:17 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:18 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:05 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Santa Ana </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:55 </td>
+											<td> 23:19 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:20 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:02 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Cal y Canto </td>
+											<td> Lunes a Viernes </td>
+											<td> 06:00 </td>
+											<td> 23:22 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:22 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:05 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Patronato </td>
+											<td> Lunes a Viernes </td>
+											<td> 06:00 </td>
+											<td> 23:23 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:23 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:06 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Cerro Blanco </td>
+											<td> Lunes a Viernes </td>
+											<td> 06:00 </td>
+											<td> 23:24 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:25 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:08 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Cementerios </td>
+											<td> Lunes a Viernes </td>
+											<td> 06:00 </td>
+											<td> 23:26 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:26 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:09 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Einstein </td>
+											<td> Lunes a Viernes </td>
+											<td> 06:00 </td>
+											<td> 23:27 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:28 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:11 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Dorsal </td>
+											<td> Lunes a Viernes </td>
+											<td> 06:00 </td>
+											<td> 23:29 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:29 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:12 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Zapadores </td>
+											<td> Lunes a Viernes </td>
+											<td> 06:00 </td>
+											<td> 23:30 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:31 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:14 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Vespucio Norte </td>
+											<td> Lunes a Viernes </td>
+											<td> 06:00 </td>
+											<td> 23:33 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:33 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:16 </td>
+										</tr>
+									</table>
+								</dd>
+
+								<!-- Aquí comienza la sección de Línea 4  -->
+								<dt style="background: #1A1D6A;">
+									Línea 4
+								</dt>
+								<dd>
+									<table border="1" style="border-collapse:collapse; text-align: center; width: 100%; font-size: 0.7em;">
+										<tr>
+											<td> Estación </td>
+											<td> Periodo </td>
+											<td> Apertura </td>
+											<td> Cierre </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Tobalaba </td>
+											<td> Lunes a Viernes </td>
+											<td> 06:00 </td>
+											<td> 23:30 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:25 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:20 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Cristobal Colón </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:55 </td>
+											<td> 23:35 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:35 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:20 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Francisco Bilbao </td>
+											<td> Lunes a Viernes </td>
+											<td> 06:00 </td>
+											<td> 23:30 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:35 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:15 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Príncipe de Gales </td>
+											<td> Lunes a Viernes </td>
+											<td> 06:00 </td>
+											<td> 23:30 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:30 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:15 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Simón Bolivar </td>
+											<td> Lunes a Viernes </td>
+											<td> 06:00 </td>
+											<td> 23:30 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:30 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:15 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Plaza Egaña </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:55 </td>
+											<td> 23:25 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:30 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:15 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Los Orientales </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:55 </td>
+											<td> 23:25 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:25 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:20 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Grecia </td>
+											<td> Lunes a Viernes </td>
+											<td> 06:00 </td>
+											<td> 23:25 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:25 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:20 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Los Presidentes </td>
+											<td> Lunes a Viernes </td>
+											<td> 06:00 </td>
+											<td> 23:25 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:25 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:20 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Quilín </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:55 </td>
+											<td> 23:25 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:25 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:25 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Las Torres </td>
+											<td> Lunes a Viernes </td>
+											<td> 06:00 </td>
+											<td> 23:25 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:25 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:25 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Macul </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:55 </td>
+											<td> 23:25 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:30 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:25 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Vicuña Mackenna </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:55 </td>
+											<td> 23:50 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:30 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:30 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Vicente Valdés </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:40 </td>
+											<td> 23:30 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:30 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:30 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Rojas Magallanes </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:50 </td>
+											<td> 23:35 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:35 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:55 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Trinidad </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:50 </td>
+											<td> 23:35 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:35 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:55 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> San José de la Estrella </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:50 </td>
+											<td> 23:35 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:35 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:55 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Los Quillayes </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:50 </td>
+											<td> 23:35 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:40 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:50 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Elisa Correa </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:45 </td>
+											<td> 23:40 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:40 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:45 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Hospital Sótero del Río </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:45 </td>
+											<td> 23:40 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:40 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:45 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Protectora de la Infanc </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:45 </td>
+											<td> 23:40 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:45 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:45 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Las Mercedes </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:40 </td>
+											<td> 23:45 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:45 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:45 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Plaza Puente Alto </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:40 </td>
+											<td> 23:45 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:50 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:45 </td>
+										</tr>
+									</table>
+								</dd>
+
+								<!-- Aquí comienza la sección de Línea 4a  -->
+								<dt style="background: #0A5FCA;">
+									Línea 4A
+								</dt>
+								<dd>
+									<table border="1" style="border-collapse:collapse; text-align: center; width: 100%; font-size: 0.7em;">
+										<tr>
+											<td> Estación </td>
+											<td> Periodo </td>
+											<td> Apertura </td>
+											<td> Cierre </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Vicuña Mackenna </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:55 </td>
+											<td> 23:50 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:50 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:35 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Santa Julia </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:50 </td>
+											<td> 23:55 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:55 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:30 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> La Granja </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:50 </td>
+											<td> 23:55 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:55 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:35 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Santa Rosa </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:45 </td>
+											<td> 23:55 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:55 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:40 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> San Ramón </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:50 </td>
+											<td> 23:55 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:55 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:40 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> La Cisterna </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:40 </td>
+											<td> 00:08 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 00:08 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:48 </td>
+										</tr>
+									</table>
+								</dd>
+
+								<!-- Aquí comienza la sección de Línea 5  -->
+								<dt style="background: #008A63;">
+									Línea 5
+								</dt>
+								<dd>
+									<table border="1" style="border-collapse:collapse; text-align: center; width: 100%; font-size: 0.7em;">
+										<tr>
+											<td> Estación </td>
+											<td> Periodo </td>
+											<td> Apertura </td>
+											<td> Cierre </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Plaza Maipú </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:55 </td>
+											<td> 23:45 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:47 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:41 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Santiago Bueras </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:55 </td>
+											<td> 23:43 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:45 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:39 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Del Sol </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:55 </td>
+											<td> 23:42 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:43 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:37 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Monte Tabor </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:55 </td>
+											<td> 23:40 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:42 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:36 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Las Parcelas </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:55 </td>
+											<td> 23:39 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:40 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:34 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Laguna Sur </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:55 </td>
+											<td> 23:37 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:38 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:32 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Barrancas </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:55 </td>
+											<td> 23:35 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:36 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:30 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Pudahuel </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:55 </td>
+											<td> 23:34 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:35 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:29 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> San Pablo </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:55 </td>
+											<td> 23:32 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:33 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:26 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Lo Prado </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:55 </td>
+											<td> 23:30 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:31 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:25 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Blanqueado </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:55 </td>
+											<td> 23:29 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:30 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:24 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Gruta de Lourdes </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:55 </td>
+											<td> 23:27 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:28 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:22 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Quinta Normal </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:55 </td>
+											<td> 23:25 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:26 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:20 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Cumming </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:55 </td>
+											<td> 23:23 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:23 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:18 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Santa Ana </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:55 </td>
+											<td> 23:24 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:25 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:17 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Plaza de Armas </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:55 </td>
+											<td> 23:25 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:26 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:19 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Bellas Artes </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:55 </td>
+											<td> 23:27 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:28 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:20 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Baquedano </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:55 </td>
+											<td> 23:29 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:29 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:22 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Parque Bustamante </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:50 </td>
+											<td> 23:31 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:31 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:24 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Santa Isabel </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:50 </td>
+											<td> 23:32 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:32 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:25 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Irarrázaval </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:50 </td>
+											<td> 23:33 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:34 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:26 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Ñuble </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:50 </td>
+											<td> 23:35 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:35 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:27 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Rodrigo de Araya </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:50 </td>
+											<td> 23:37 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:38 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:31 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Carlos Valdovinos </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:45 </td>
+											<td> 23:39 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:39 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:32 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Camino Agrícola </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:45 </td>
+											<td> 23:41 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:41 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:34 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> San Joaquín </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:45 </td>
+											<td> 23:42 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:42 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:35 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Pedrero </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:45 </td>
+											<td> 23:44 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:44 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:37 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Mirador </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:40 </td>
+											<td> 23:45 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:46 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:38 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Bellavista de La Florid </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:40 </td>
+											<td> 23:47 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:47 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:40 </td>
+										</tr>
+										<tr>
+											<td rowspan="3"> Vicente Valdés </td>
+											<td> Lunes a Viernes </td>
+											<td> 05:40 </td>
+											<td> 23:49 </td>
+										</tr>
+										<tr>
+											<td> Sábados </td>
+											<td> 06:30 </td>
+											<td> 23:49 </td>
+										</tr>
+										<tr>
+											<td> Domingos y Festivos </td>
+											<td> 08:00 </td>
+											<td> 23:42 </td>
+										</tr>
+									</table>
+									<br />
+								</dd>
+							</dl>
+						</div>
+					</p>
+				</div>
+				<script src="js/list.js"></script>
+			</div>
+
+			<div id="saldoBip" class="pagebody" aria-owns="tb4">
+				<div style="margin:0.5rem 1rem 0.5rem 1rem">
+					<h3>Consulta el saldo de tu Bip!</h3>
+					<br />
+					<p>
+						<div id="divForm" class="content">
+							<article>
+								<p>
+									<input id="idTarjeta" class="inputText" type="number" maxlength="15" placeholder="N° Tarjeta Bip!" />
+								</p>
+								<p>
+									<button id="consultar" onclick="consultar()">
+										Consultar
+									</button>
+								</p>
+							</article>
+						</div>
+					</p>
+				</div>
+				<script src="js/consultabip.js"></script>
+			</div>
+
+			<div id="terminos" class="pagebody" aria-owns="tb5">
+				<div style="margin:0.5rem 1rem 0.5rem 1rem">
+					<h2>Términos de Uso</h2>
+					<p>
+						This is the third page body (page 2.)
+					</p>
+				</div>
+			</div>
+
+			<footer class="toolbar">
+				<menu id="tb0" type="toolbar" aria-expanded="true">
+					<li aria-controls="home" class="icon inicio"></li>
+					<li aria-controls="mapa" class="icon place" onclick="getGeolocation()"></li>
+					<li aria-controls="plano" class="icon metro"></li>
+					<li aria-controls="horario" class="icon agenda"></li>
+					<li aria-controls="saldoBip" class="icon bip"></li>
+					<li aria-controls="terminos" class="icon user"></li>
+				</menu>
+				<menu id="tb1" type="toolbar" aria-expanded="true">
+					<li aria-controls="home" class="icon inicio"></li>
+					<li aria-controls="mapa" class="icon roll_back" onclick="getGeolocation()"></li>
+					<li aria-controls="plano" class="icon metro"></li>
+					<li aria-controls="horario" class="icon agenda"></li>
+					<li aria-controls="saldoBip" class="icon bip"></li>
+					<li aria-controls="terminos" class="icon user"></li>
+				</menu>
+				<menu id="tb2" type="toolbar" aria-expanded="true">
+					<li aria-controls="home" class="icon inicio"></li>
+					<li aria-controls="mapa" class="icon place" onclick="getGeolocation()"></li>
+					<li aria-controls="plano" class="icon metro"></li>
+					<li aria-controls="horario" class="icon agenda"></li>
+					<li aria-controls="saldoBip" class="icon bip"></li>
+					<li aria-controls="terminos" class="icon user"></li>
+				</menu>
+				<menu id="tb3" type="toolbar" aria-expanded="true">
+					<li aria-controls="home" class="icon inicio" onclick="cambiarcont()"></li>
+					<li aria-controls="mapa" class="icon place" onclick="cambiarcont(); getGeolocation();"></li>
+					<li aria-controls="plano" class="icon metro" onclick="cambiarcont()"></li>
+					<li aria-controls="horario" class="icon agenda" onclick="cambiarcont()"></li>
+					<li aria-controls="saldoBip" class="icon bip" onclick="cambiarcont()"></li>
+					<li aria-controls="terminos" class="icon user" onclick="cambiarcont()"></li>
+				</menu>
+				<menu id="tb4" type="toolbar" aria-expanded="true">
+					<li aria-controls="home" class="icon inicio"></li>
+					<li aria-controls="mapa" class="icon place" onclick="getGeolocation();"></li>
+					<li aria-controls="plano" class="icon metro"></li>
+					<li aria-controls="horario" class="icon agenda"></li>
+					<li aria-controls="saldoBip" class="icon bip"></li>
+					<li aria-controls="terminos" class="icon user"></li>
+				</menu>
+				<menu id="tb5" type="toolbar" aria-expanded="true">
+					<li aria-controls="home" class="icon inicio"></li>
+					<li aria-controls="mapa" class="icon place" onclick="getGeolocation();"></li>
+					<li aria-controls="plano" class="icon metro"></li>
+					<li aria-controls="horario" class="icon agenda"></li>
+					<li aria-controls="saldoBip" class="icon bip"></li>
+					<li aria-controls="terminos" class="icon user"></li>
+				</menu>
+				<script src="js/OpenLayers.js"></script>
+				<script src="js/map.js"></script>
+			</footer>
+		</section>
+	</body>
+</html>
