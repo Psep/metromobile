@@ -97,7 +97,7 @@ function successCallback(ajaxResponse) {
 
 	html += "</table>";
 	html += "<br />";
-	html += '<button id="inicio" onclick="inicio();">Ir al Inicio</button></div>';
+	html += '<button id="inicio" onclick="inicio();">Ir a la Consulta</button></div>';
 	html += "</article>";
 	document.getElementById('divForm').innerHTML = html;
 }

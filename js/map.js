@@ -7,7 +7,11 @@ var options = {
 	numZoomLevels : 4
 };
 
-var graphic = new OpenLayers.Layer.Image('Plano Metro de Santiago', 'images/plano.jpg', new OpenLayers.Bounds(-180, -88.759, 180, 88.759), new OpenLayers.Size(580, 288), options);
+var graphic = new OpenLayers.Layer.Image('Plano Metro de Santiago', 	
+										'images/plano.jpg', 
+										new OpenLayers.Bounds(-180, -88.759, 180, 88.759), 
+										new OpenLayers.Size(1000, 650), 
+										options);
 
 plano.addLayers([graphic]);
 plano.addControl(new OpenLayers.Control.LayerSwitcher());
