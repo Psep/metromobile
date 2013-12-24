@@ -53,7 +53,15 @@ function loadTerminos() {
 	html += '</p>';
 	html += '<br />';
 	html += '<p>';
+	html += 'Metro de Santiago y su logo son marca registrada de Metro S.A.';
+	html += '</p>';
+	html += '<br />';
+	html += '<p>';
 	html += 'Recuerda, esta app es Software Libre bajo <a href="https://github.com/Psep/metromobile" target="_blank">Licencia GPLv3</a>.';
+	html += '</p>';
+	html += '<br />';
+	html += '<p style="text-align: center;">';
+	html += 'Copyright &copy 2013 <a href="http://www.psep.cl" target="_blank">Pablo Sepúlveda P.</a>';
 	html += '</p>';
 	html += '<br />';
 	html += '<br />';
