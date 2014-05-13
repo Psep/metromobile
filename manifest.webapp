@@ -1,6 +1,6 @@
 {
   "name": "MetroMobile",
-  "version": "1.0",
+  "version": "2.0",
   "description": "App no oficial del Metro de Santiago para Firefox OS",
   "launch_path": "/index.html",
   "icons": {

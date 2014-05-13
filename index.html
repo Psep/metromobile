@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html manifest="manifest.appcache">
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width">
+		<title>MetroMobile</title>
 		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
 		<link rel="stylesheet" type="text/css" href="style/icons.css"/>
 		<link rel="stylesheet" type="text/css" href="style/principal.css"/>
@@ -25,9 +26,11 @@
 		<script src="js/jquery-1.10.2.js"></script>
 		<script src="js/jquery-1.10.2.min.js"></script>
 		<script src="js/jquery.blockUI.js"></script>
-		<title>MetroMobile</title>
+		<script src="js/OpenLayers.js"></script>
+		<script src="js/map.js"></script>
+		<script src="js/metro.js"></script>
 	</head>
-	<body>
+	<body onload="loadPlano();">
 		<section class="principal">
 			<header>
 				<img src="images/metro.png"/>
@@ -67,6 +70,7 @@
 					#planoMetro {
 						width: 100%;
 						height: 100%;
+						background-color: #FFFFFF;
 					}
 				</style>
 				<div id="planoMetro" style="margin:0.5rem 1rem 0.5rem 1rem">
@@ -2138,8 +2142,6 @@
 					<li aria-controls="saldoBip" class="icon bip" onclick="clearTerminos();"></li>
 					<li aria-controls="terminos" class="icon user" onclick="loadTerminos();"></li>
 				</menu>
-				<script src="js/OpenLayers.js"></script>
-				<script src="js/map.js"></script>
 			</footer>
 		</section>
 	</body>
