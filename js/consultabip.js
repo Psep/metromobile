@@ -29,7 +29,7 @@ function consultar() {
 			$.ajax({
 				type : 'GET',
 				dataType : 'json',
-				url : 'http://www.psep.cl/api/Bip.php?',
+				url : 'http://www.psep.cl/api/BipService.php?',
 				data : data,
 				success : successCallback,
 				error : errorCallback
